@@ -1,0 +1,4 @@
+// color scheme to selected elements
+::selection {
+ @include has-color($brand-primary, $global-color);
+}

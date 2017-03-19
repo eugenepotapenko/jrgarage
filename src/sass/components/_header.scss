@@ -1,0 +1,75 @@
+.header {
+
+  &-wrapper {
+    background-color: $gray-light;
+  }
+
+  &-info {
+    @include flex-dispay;
+    align-items: center;
+    justify-content: space-between;
+    @extend %container;
+    height: 40px;
+    font-size: 0;
+
+    a {
+      display: inline-flex;
+      padding: 0 13px;
+      color: $gray;
+      @include transition-willChange(color);
+
+      &:hover {
+        color: $brand-primary;
+      }
+    }
+
+    .content {
+      &:nth-of-type(1):not(.contact) {
+        margin-left: -#{$padding-outer};
+
+        a {
+          font-size: $font-size-md;
+        }
+      }
+
+      &:nth-last-of-type(1):not(.social) {
+        margin-right: -#{$padding-outer};
+
+        a {
+          font-size: $font-size-sm;
+        }
+      }
+    }
+  }
+}
+
+.nav {
+  @include flex-dispay;
+  align-items: center;
+  justify-content: space-around;
+  @extend %container;
+  height: 60px;
+  font-size: 0;
+
+  ul {
+    @include flex-dispay;
+    height: 100%;
+
+    li {
+      a {
+        @include flex-dispay;
+        @include flex-center;
+        height: 100%;
+        padding: 0 20px;
+        font-size: $font-size-sm;
+        color: $gray;
+        text-transform: uppercase;
+        @include transition-willChange(background-color);
+
+        &:hover {
+          background-color: $brand-primary;
+        }
+      }
+    }
+  }
+}

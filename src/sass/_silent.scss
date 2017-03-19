@@ -1,0 +1,18 @@
+%container {
+  margin: auto;
+  padding: 0 $padding-outer;
+
+  width: 100%;
+
+  @include sm {
+    width: $container-width-sm;
+  }
+
+  @include md {
+    width: $container-width-md;
+  }
+
+  @include lg {
+    width: $container-width-lg;
+  }
+}

@@ -1,0 +1,69 @@
+$transparent-color:         transparent !global;
+$global-color:              #fff !global;
+$gray-base:                 #000 !global;
+$gray:                      #222 !global;
+$orange-color:              #ff6600 !global;
+
+$brand-primary:             $orange-color;
+$link-color:                $brand-primary;
+$text-color:                $gray-base;
+$body-bg:                   $global-color;
+
+$gray-light:                #f0f2f7 !default;
+
+$font-family:               Lato;
+$font-family-base:          $font-family;
+
+// default value for sizing
+$rem:                       16px !global;
+$padding-outer:             ($rem * .75);
+
+$font-size-xs:              floor($rem / 1.33) !default;
+$font-size-sm:              floor($rem / 1.14) !default;
+$font-size-base:            $rem !default;
+$font-size-md:              floor($rem * 1.14) !default;
+$font-size-lg:              ($rem * 1.5) !default;
+$font-size-title:           ($rem * 2.5) !default;
+
+$font-weight-regular:       400 !default;
+$font-weight-bold:          700 !default;
+$font-weight-black:         900 !default;
+
+
+$line-height-base:          1 !default;
+$line-height-normal:        1.1 !default;
+
+// fa
+$fa-css-prefix:             icon !default;
+$fa-var-facebook:           "\f09a" !default;
+$fa-var-google-plus:        "\f0d5" !default;
+$fa-var-youtube-play:       "\f16a" !default;
+$fa-var-instagram:          "\f16d" !default;
+$fa-var-twitter:            "\f099" !default;
+$fa-var-phone:              "\f095" !default;
+$fa-var-envelope:           "\f0e0" !default;
+$fa-var-angle-down:         "\f107" !default;
+$fa-var-map-signs:          "\f277" !default;
+$fa-var-paper-plane:        "\f1d8" !default;
+
+// media queries
+$xs:                        320px !default;
+$xs-landscape:              480px !default;
+$sm:                        767px !default;
+$md:                        992px !default;
+$lg:                        1360px !default;
+$xlg:                       1600px !default;
+
+$xs-max:                    $xs - 1 !default;
+$xs-landscape-max:          $xs-landscape - 1 !default;
+$sm-max:                    $sm - 1 !default;
+$md-max:                    $md - 1 !default;
+$lg-max:                    $lg - 1 !default;
+$xlg-max:                   $xlg - 1 !default;
+
+// container
+$container-width:           100%;
+$container-width-lg:        1300px;
+$container-width-md:        960px;
+$container-width-sm:        720px;
+
