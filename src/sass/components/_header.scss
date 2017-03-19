@@ -9,11 +9,13 @@
     align-items: center;
     justify-content: space-between;
     @extend %container;
-    height: 40px;
+    height: $header-first-row-height;
     font-size: 0;
 
     a {
       display: inline-flex;
+      align-items: center;
+      height: $header-first-row-height;
       padding: 0 13px;
       color: $gray;
       @include transition-willChange(color);
@@ -44,32 +46,102 @@
 }
 
 .nav {
-  @include flex-dispay;
-  align-items: center;
-  justify-content: space-around;
+  position: relative;
   @extend %container;
-  height: 60px;
+  height: $nav-height;
   font-size: 0;
+  @include clearfix;
 
   ul {
     @include flex-dispay;
     height: 100%;
 
+    &:nth-of-type(1){
+      float: left;
+
+      @include sm {
+        margin-left: 20px;
+      }
+
+      @include md {
+        margin-left: 40px;
+      }
+
+      @include lg {
+        margin-left: 80px;
+      }
+    }
+
+    &:nth-last-of-type(1){
+      float: right;
+
+      @include sm {
+        margin-right: 20px;
+      }
+
+      @include md {
+        margin-right: 40px;
+      }
+
+      @include lg {
+        margin-right: 80px;
+      }
+    }
+
     li {
       a {
         @include flex-dispay;
         @include flex-center;
-        height: 100%;
+        height: $nav-height;
         padding: 0 20px;
         font-size: $font-size-sm;
         color: $gray;
         text-transform: uppercase;
         @include transition-willChange(background-color);
 
+        @include sm {
+          padding: 0 10px;
+        }
+
+        @include md {
+          padding: 0 20px;
+        }
+
         &:hover {
           background-color: $brand-primary;
         }
+
+        .icon {
+          padding-left: $rem / 2;
+        }
       }
+    }
+  }
+}
+
+.logo {
+  display: block;
+  @include absolute(50% null null 50%);
+  transform: translate(-50%, -50%);
+  z-index: 21;
+
+  @include lg {
+    top: 65%
+  }
+
+  > img {
+    @include img-responsive;
+
+    @include sm {
+      max-width: 155px;
+    }
+
+    @include md {
+      max-width: 200px;
+    }
+
+    @include lg {
+      max-width: 100%;
     }
   }
 }

@@ -1,0 +1,54 @@
+.main {
+  @include flex-dispay;
+
+  .main-link {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    height: calc(100vh - #{$header-first-row-height} - #{$nav-height});
+    width: 20%;
+    overflow: hidden;
+
+    &:hover {
+      &:after {
+        background-color: rgba(0,0,0,0);
+      }
+
+      img {
+        left: -50%;
+      }
+    }
+
+
+    &:after {
+      content: '';
+      @include absolute(0 0 0 0);
+      @include size(100%);
+      background-color: rgba(0,0,0,.5);
+      @include transition-willChange(background-color);
+    }
+
+    span {
+      position: relative;
+      display: block;
+      width: 100%;
+      padding-bottom: (1.5 * $rem);
+      font: {
+        size: $font-size-md;
+        weight: $font-weight-bold;
+      }
+      color: $global-color;
+      text-align: center;
+      text-transform: uppercase;
+      z-index: 10;
+    }
+
+
+    img {
+      @include absolute(50% null null 50%);
+      transform: translate(-50%,-50%);
+      will-change: left;
+      transition: left 3s linear;
+    }
+  }
+}

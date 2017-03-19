@@ -16,3 +16,7 @@
     width: $container-width-lg;
   }
 }
+
+.c0 {
+  @extend %container;
+}
