@@ -19,13 +19,14 @@ $rem:                       16px !global;
 $padding-outer:             ($rem * .75);
 $nav-height:                60px !default;
 $header-first-row-height:   40px !default;
+$footer-height:             100vh !default;
 
-$font-size-xs:              floor($rem / 1.33) !default;
-$font-size-sm:              floor($rem / 1.14) !default;
-$font-size-base:            $rem !default;
-$font-size-md:              floor($rem * 1.14) !default;
-$font-size-lg:              ($rem * 1.5) !default;
-$font-size-title:           ($rem * 2.5) !default;
+$font-size-xs:              floor($rem / 1.33) !default;    //12px
+$font-size-sm:              floor($rem / 1.14) !default;    //14px
+$font-size-base:            $rem !default;                  //16px
+$font-size-md:              floor($rem * 1.14) !default;    //18px
+$font-size-lg:              ($rem * 1.5) !default;          //24px
+$font-size-title:           ($rem * 2.5) !default;          //40px
 
 $font-weight-regular:       400 !default;
 $font-weight-bold:          700 !default;

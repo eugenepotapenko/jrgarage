@@ -13,15 +13,35 @@
     font-size: 0;
 
     a {
+      position: relative;
       display: inline-flex;
       align-items: center;
       height: $header-first-row-height;
       padding: 0 13px;
       color: $gray;
-      @include transition-willChange(color);
+      transition: .15s ease-in-out;
+
+      &:before {
+        z-index: 2;
+      }
+
+      &:after {
+        content: '';
+        @include size(40px);
+        @include absolute(50% null null 50%);
+        z-index: 1;
+        transform: translate(-50%, -50%) scale(0);
+        background: $brand-primary;
+        transition: .25s ease-in-out;
+        border-radius: 50%;
+      }
 
       &:hover {
-        color: $brand-primary;
+        color: $global-color;
+
+        &:after{
+          transform: translate(-50%, -50%) scale(1);
+        }
       }
     }
 
@@ -39,6 +59,15 @@
 
         a {
           font-size: $font-size-sm;
+          @include transition-willChange(color);
+
+          &:hover {
+            color: $brand-primary;
+          }
+
+          &:after {
+            display: none;
+          }
         }
       }
     }
@@ -90,6 +119,7 @@
 
     li {
       a {
+        position: relative;
         @include flex-dispay;
         @include flex-center;
         height: $nav-height;
@@ -97,7 +127,17 @@
         font-size: $font-size-sm;
         color: $gray;
         text-transform: uppercase;
-        @include transition-willChange(background-color);
+        //@include transition-willChange(background-color);
+        overflow: hidden;
+
+        &:after {
+          content: '';
+          @include size(100%);
+          @include absolute(0 0 null null);
+          background-color: $brand-primary;
+          transform:  translateY(100%);
+          @include transition-willChange(transform);
+        }
 
         @include sm {
           padding: 0 10px;
@@ -108,7 +148,37 @@
         }
 
         &:hover {
-          background-color: $brand-primary;
+          &:after {
+            transform:  translateY(0);
+            z-index: -1;
+          }
+
+          span {
+            display: block;
+            @include size(100% auto);
+            text-align: center;
+          }
+
+          .orig {
+            transform: translateY(-300%);
+          }
+
+          .hover {
+            bottom: 50%;
+            transform: translate(-50%, 50%);
+            color: $global-color;
+          }
+        }
+
+        .orig {
+          position: relative;
+          @include transition-willChange(transform);
+        }
+
+        .hover {
+          @include absolute(null null 0 50%);
+          transform: translate(-50%, 300%);
+          @include transition-willChange(transform);
         }
 
         .icon {
@@ -121,13 +191,9 @@
 
 .logo {
   display: block;
-  @include absolute(50% null null 50%);
+  @include absolute(80px null null 50%);
   transform: translate(-50%, -50%);
   z-index: 21;
-
-  @include lg {
-    top: 65%
-  }
 
   > img {
     @include img-responsive;

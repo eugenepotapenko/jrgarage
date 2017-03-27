@@ -17,6 +17,14 @@
   }
 }
 
-.c0 {
+.con {
   @extend %container;
+}
+
+%half-width {
+  width: 50%;
+}
+
+.half-width {
+  @extend %half-width;
 }

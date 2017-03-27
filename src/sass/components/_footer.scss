@@ -1,0 +1,91 @@
+.footer {
+  position: relative;
+  height: $footer-height;
+
+  .wrapper {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    @extend %container;
+  }
+
+  ul {
+    @include size-reset();
+    list-style-type: none;
+    font-size: $font-size-md;
+
+    li {
+      &:nth-of-type(1) {
+        a {
+          margin-top: $rem * .5;
+        }
+      }
+
+      &:nth-last-of-type(1) {
+        a {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    a {
+      @include flex-dispay;
+      align-items: center;
+      color: $gray;
+      margin-bottom: $rem * 1.5;
+
+      .icon {
+        font-size: $font-size-lg;
+        min-width: $rem * 2;
+        margin-right: $rem * 1.1;
+      }
+    }
+  }
+
+  .social {
+    margin: ($rem * 3) 0;
+    text-align: center;
+
+    a {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      padding: 20px;
+      color: $gray;
+      transition: .15s ease-in-out;
+      font-size: $rem * 2;
+
+      &:before {
+        z-index: 2;
+      }
+
+      &:after {
+        content: '';
+        @include size(60px);
+        @include absolute(50% null null 50%);
+        z-index: 1;
+        transform: translate(-50%, -50%) scale(0);
+        background: $brand-primary;
+        transition: .25s ease-in-out;
+        border-radius: 50%;
+      }
+
+      &:hover {
+        color: $global-color;
+
+        &:after{
+          transform: translate(-50%, -50%) scale(1);
+        }
+      }
+    }
+  }
+}
+
+.map {
+  @include absolute(0 0 null null);
+  @extend %half-width;
+  height: $footer-height;
+  @include background-center();
+  background-image: url(./../img/map.png);
+
+}
