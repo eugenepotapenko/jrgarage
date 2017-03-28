@@ -1,0 +1,47 @@
+.btn {
+  display: inline-block;
+  padding: 0 30px;
+  margin-bottom: 0;
+  font-size: $font-size-md;
+  font-weight: $font-weight-regular;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: middle;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  background-image: none;
+  background-color: $global-color;
+  border: 2px solid $gray-input;
+  border-radius: ($rem * 5);
+  text-align: center;
+  text-transform: uppercase;
+  height: 48px;
+  line-height: 48px;
+  color: $gray;
+  transition: .25s ease-in-out;
+
+  .icon {
+    padding-right: 10px;
+  }
+
+  &:hover {
+    color: $brand-primary;
+    border-color: $brand-primary;
+  }
+}
+
+.btn-anim {
+  font-size: 0;
+
+  & > span {
+    vertical-align: baseline;
+    display: inline-block;
+    padding: 0;
+    font-size: $font-size-;
+  }
+}

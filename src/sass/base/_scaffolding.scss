@@ -97,3 +97,10 @@ select{
 	outline:none !important;
 	overflow : hidden;
 }
+
+*,
+&:hover,
+&:focus,
+&:active {
+	outline: none;
+}

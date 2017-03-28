@@ -87,5 +87,12 @@
   height: $footer-height;
   @include background-center();
   background-image: url(./../img/map.png);
+}
 
+.footer-form {
+  text-align: right;
+
+  .btn {
+    margin-top: 15px;
+  }
 }

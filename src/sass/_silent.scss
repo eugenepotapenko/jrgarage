@@ -27,4 +27,5 @@
 
 .half-width {
   @extend %half-width;
+  padding-right: $rem * 1.5;
 }
